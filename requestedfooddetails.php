@@ -50,7 +50,7 @@ include("connection.php");
                        
                         // echo '<th scope="col">IsPermanentAddress</th>';
                         echo '<th scope="col">Status</th>';
-                        echo '<th scope="col">Actions</th>';
+                        echo '<th scope="col" colspan="2">Actions</th>';
                        
                         echo '</tr>';
                         echo '<tbody>';
@@ -65,7 +65,8 @@ include("connection.php");
                           
                           // echo '<td>'.$row['IsPermanentAddress'].'</td>';
                           echo '<td>'.$row['status'].'</td>';
-                          echo '<td> <a href="#" onclick="ChanegStatus(this);>Edit</a>'.$row['status'].'</td>';
+                          echo '<td> <a href="#" data-req_id="'.$row['Requestid'].'" onclick="ChangeStatus(this);">Change Status</a></td>';
+                          echo '<td> <a href="#" data-req_id="'.$row['Requestid'].'" onclick="ChangeStatus(this);">Delete</a></td>';
                          
                           echo '</tr>';
                         }
@@ -84,8 +85,17 @@ include("connection.php");
 </div>   <!-- side bar end -->
 
 <script>
-function ChangesStatus(e){
-  debugger
+var req_global_id=0;
+function ChangeStatus(e){
+  // open prompt/modal here
+  req_global_id=$(e).data("req_id"); 
+  
+}
+function saveChanges(){
+  // you have req_global_id
+  // get status id from ddl
+  $status=window.prompt("Enter status");
+  // update status where red_id=req_global_id
 }
 </script>
 
