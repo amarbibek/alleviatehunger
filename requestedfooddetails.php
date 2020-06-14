@@ -36,20 +36,21 @@ include("connection.php");
       <div>   <!-- start user details area -->
                  <div class="col-sm-9 col-md-10 mt-5">
                    <?php
-                    $sql="select * from requestforfood r inner join deliverystatus d on  r.DeliveryStatusId=d.Dstatusid";
+                    $sql="select * from requestforfood r inner join deliverystatus d on  r.DeliveryStatusId=d.Dstatusid inner join user u on u.Userid=r.NeedyPeopleid";
                     $result=$conn->query($sql);
                     if($result->num_rows>0)
                      {
                         echo '<table class="table">';
                         echo '<thead>';
                         echo '<tr>';
-                        echo '<th scope="col">NeedyPeopleId</th>';
-                        echo '<th scope="col">RequestId</th>';
-                        echo '<th scope="col">NoOfMeals</th>';
-                        echo '<th scope="col">AmountOfFood</th>';
+                        echo '<th scope="col">Needy People Name</th>';
+                        // echo '<th scope="col">RequestId</th>';
+                        echo '<th scope="col">No Of Meals</th>';
+                        echo '<th scope="col">Amount Of Food</th>';
                        
-                        echo '<th scope="col">IsPermanentAddress</th>';
+                        // echo '<th scope="col">IsPermanentAddress</th>';
                         echo '<th scope="col">Status</th>';
+                        echo '<th scope="col">Actions</th>';
                        
                         echo '</tr>';
                         echo '<tbody>';
@@ -57,13 +58,14 @@ include("connection.php");
                         {
                           echo '<tr>';
 
-                          echo '<td>'.$row['NeedyPeopleid'].'</td>';
-                          echo '<td>'.$row['Requestid'].'</td>';
+                          echo '<td>'.$row['FirstName'].'</td>';
+                          // echo '<td>'.$row['Requestid'].'</td>';
                           echo '<td>'.$row['NoOfMeals'].'</td>';
                           echo '<td>'.$row['AmountOfFood'].'</td>';
                           
-                          echo '<td>'.$row['IsPermanentAddress'].'</td>';
+                          // echo '<td>'.$row['IsPermanentAddress'].'</td>';
                           echo '<td>'.$row['status'].'</td>';
+                          echo '<td> <a href="#" onclick="ChanegStatus(this);>Edit</a>'.$row['status'].'</td>';
                          
                           echo '</tr>';
                         }
@@ -81,7 +83,11 @@ include("connection.php");
   
 </div>   <!-- side bar end -->
 
-
+<script>
+function ChangesStatus(e){
+  debugger
+}
+</script>
 
 <?php
 // include("/includes/slider.php");

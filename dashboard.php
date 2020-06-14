@@ -3,8 +3,10 @@ session_start();
 include("/includes/header.php");
 include("connection.php");
 
-$sql="SELECT max(Requestid) From requestforfood";
+$sql="SELECT COUNT(*) From requestforfood";
 $result=$conn->query($sql);
+// echo $result;
+// exit();
 $row=mysqli_fetch_row($result);
 $foodrequest=$row[0];
 
