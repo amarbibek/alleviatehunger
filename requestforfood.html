@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/requestforfood.css">
+</head>
+<body>
+    <div class="contact-form">
+     <h3>Enter the details:</h3>
+     <div class="txtb">
+         <input type="text" id="userid" placeholder="userid" name="" value="">
+    </div>
+    <div class="txtb">
+        
+        <input type="text" placeholder="No of Meals" name="" value="">
+   </div>
+   <div class="txtb">
+     <input type="text" name="" placeholder="Amount of Food" value="">
+    </div>
+   <div class="txtb">
+    <label>Address</label> <input type="text" placeholder="street" name="" value="">
+   
+    </div>
+    <div class="txtb">
+    <input type="text" id="city" placeholder="city" name="" value=""> 
+    <span id='city-len-error' style="color: red; display: none;">City name cannot be less than 5 chars long!!!</span>
+    </div>
+    <div class="txtb">
+        <input type="text" placeholder="landmark" name="" value=""> 
+    </div>
+    <div class="txtb">
+    <input type="text" placeholder="state" name="" value=""> 
+    </div>
+    <div class="txtb">
+     <input type="text" placeholder="pincode" name="" value=""> 
+    </div>
+    <div class="txtb">
+     <input type="text" placeholder="country" name="" value=""> 
+    </div>
+    <input class="btn" type="submit" value="SUBMIT">
+    </div>
+
+    <script src='https://code.jquery.com/jquery-3.5.0.min.js'>
+    </script>
+  
+    <script>
+      $(function(){ 
+          $("#city").keydown(function(e){
+              len=$("#city").val().length;
+            //   debugger;
+              if(len<5){
+                // console.log("City name cannot be less than 5 chars long!!!");
+                $("#city-len-error").css("display","block");
+              }else{
+                $("#city-len-error").css("display","none");
+              }
+            
+          });
+      });
+    </script>
+</body>
+</html>
+

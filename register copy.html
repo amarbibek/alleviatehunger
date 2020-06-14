@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+
+      <form class="login-form">
+        <input type="text" placeholder="user name" name="user" id="username1/>
+        <input type="password" placeholder="password" name="passw" id="password1"/>
+        <button>Sign In</button>
+        <p class="message">Not Registered? <a href="#">Create an Account</a></p>
+      </form>
+      <form class="register-form" action="register_insert.php" method="POST">
+        <input type="text" placeholder="First name" name="fname" id="firstname"/>
+        <input type="text" placeholder="Middle name" name="mname" id="middlename"/>
+        <input type="text" placeholder="Last name" name="lname" id="lastname"/>
+        <input type="text" placeholder="Gender" name="gender" id="gender1"/>
+        <input type="text" placeholder="Role" name="role" id="role1"/>
+        <input type="text" placeholder="Contact Number" name="cno" id="contact"/>
+        <input type="text" placeholder="Email id" name="email" id="emailid"/>
+
+
+        <input type="text" placeholder="user name" name="uname" id="username"/>
+        <input type="text" placeholder="password" name="pass" id="password"/>
+        <button>Create an Account</button>
+        <p class="message"> Already Registered? <a href="#">Sign In</a>
+        </p>
+      </form>
+
+
+    </div>
+  </div>
+
+  <script src='https://code.jquery.com/jquery-3.5.0.min.js'>
+  </script>
+
+  <script>
+    $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+  </script>
+</body>
+</html>
